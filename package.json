@@ -1,1 +1,40 @@
-{     "devDependencies": {         "react-sparklines": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-react-sparklines",     "homepage": "https://github.com/npmtest/node-npmtest-react-sparklines",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-react-sparklines.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [react-sparklines (v1.6.0)](https://github.com/borisyankov/react-sparklines#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-react-sparklines.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-react-sparklines) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-react-sparklines.svg)](https://travis-ci.org/npmtest/node-npmtest-react-sparklines)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "react-sparklines": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-react-sparklines",
+    "keywords": [
+        "coverage",
+        "test",
+        "react-sparklines"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_react_sparklines.js",
+    "name": "npmtest-react-sparklines",
+    "nameAlias": "npmtest_react_sparklines",
+    "nameOriginal": "npmtest-react-sparklines",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-react-sparklines.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
